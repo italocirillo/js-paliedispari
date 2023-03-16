@@ -1,24 +1,40 @@
-// PAROLA PALINDROMA   
-const parolaUtente = prompt("Dimmi la parola che vuoi verificare che sia palindroma");
+ // PAROLA PALINDROMA
+const bottoneParolaPalindroma=document.querySelector(".bottone-parola-palindroma");
+bottoneParolaPalindroma.addEventListener("click", function(){ 
+    const parolaUtente = document.getElementById("parola-utente");
+    const outputParolaPalindroma=document.querySelector(".output-parola-palindroma");
+    // Ripulisco l'output 
+    outputParolaPalindroma.innerHTML="";
+    //  OUTPUT
+    if (verificaParolePalindrome(parolaUtente.value.toUpperCase(parolaUtente)) === true) {
+        outputParolaPalindroma.innerHTML += parolaUtente.value.toUpperCase(parolaUtente) +" È UNA PAROLA PALINDROMA";
+        console.log("PAROLA PALINDROMA");
+    } else {
+        outputParolaPalindroma.innerHTML += parolaUtente.value.toUpperCase(parolaUtente) +" NON È UNA PAROLA PALINDROMA";
+        console.log("PAROLA NON PALINDROMA");
+    }
+    // Ripulisco l'input
+    parolaUtente.value="";
+})
 
-//  OUTPUT
-if (verificaParolePalindrome(parolaUtente) === true) {
-    console.log("PAROLA PALINDROMA");
-} else {
-    console.log("PAROLA NON PALINDROMA");
-}
 
 // PARI E DISPARI   
-const numeroUtente = prompt("Dimmi il numero da 1 a 5 che vuoi sommare a uno random");
-const sceltaUtente = prompt("Dimmi se secondo te la scelta sarà pari o dispari");
-
-//  OUTPUT
-if (sommaPariDispari(numeroUtente, sceltaUtente) === true) {
-    console.log("HAI VINTO");
-} else {
-    console.log("NON HAI VINTO");
-}
-
+// const numeroUtente = prompt("Dimmi il numero da 1 a 5 che vuoi sommare a uno random");
+// const sceltaUtente = prompt("Dimmi se secondo te la scelta sarà pari o dispari");
+const bottonePariDispari=document.querySelector(".bottone-pari-dispari");
+bottonePariDispari.addEventListener("click",function(){
+    const numeroUtente = document.getElementById("numero-utente");
+    const sceltaUtente = document.getElementById("scelta-utente");
+    const outputPariDispari=document.querySelector(".output-pari-dispari");
+    
+    console.log(sceltaUtente.value);
+    //  OUTPUT
+    if(sommaPariDispari(parseInt(numeroUtente.value), sceltaUtente.value) === true){
+        outputPariDispari.innerHTML = "HAI VINTO";
+    }else{
+        outputPariDispari.innerHTML = "HAI PERSO";
+    }
+})
 
 
 /***********************************/
@@ -59,11 +75,13 @@ function sommaPariDispari(numero, scelta) {
     // Variabili
     let pari = true;
     let vinto = true;
-    console.log(numeroRandom);
     // Sommo i numeri
-    somma = numeroRandom + numero;
+    somma = parseInt(numeroRandom) + parseInt(numero);
+    console.log("il tuo numero è "+numero+typeof(numero))
+    console.log("la somma è "+somma+typeof(somma));
+    console.log("la scelta è "+scelta+typeof(scelta));
     // Verifico se sia pari o dispari e la scelta dell'utente
-    if(somma %2 === 0){
+    if(somma%2 === 0){
         pari = true;
     }else{
         pari = false;
@@ -76,11 +94,12 @@ function sommaPariDispari(numero, scelta) {
             vinto = false;
         }
     }else {
-        if(scelta === true){
-            vinto = false;
-        }else{
+        if(scelta === "dispari"){
             vinto = true;
+        }else{
+            vinto = false;
         }
     }
+    console.log(vinto);
     return vinto;
 }

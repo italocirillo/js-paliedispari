@@ -1,3 +1,41 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
-    background-color: bisque;
+    background-color: rgb(200, 176, 148);
+}
+
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+h1{
+    font-family: 'Rubik Iso', cursive;
+    text-align: center;
+    color: cornflowerblue;
+}
+section{
+    border: 1px solid black;
+    padding-bottom: 2em;
+    text-align: center;
+    font-family: 'Tilt Prism', cursive;
+    margin: 1em;
+}
+h3{
+    background-color: cornflowerblue;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+p,h4{
+    padding: 1em 0em;
+}
+button{
+    border-radius: 10px;
+    padding: 1em;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
 }

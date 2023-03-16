@@ -5,12 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paliedispari</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Iso&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sono:wght@200;300;400;500;600;700;800&family=Tilt+Prism&display=swap" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <main>
+        <div class="container">
+            <h1>
+                PALI E DISPARI
+            </h1>
+            <!-- SEZIONE PALINDROME -->
+            <section>
+                <h3>Dimmi la parola che vuoi verificare sia palindroma</h3>
+                <label for="parola-utente"></label>
+                <input type="text" id="parola-utente" placeholder="scrivi qui la parola">
+                <p class="output-parola-palindroma"></p>
+                <button class="bottone-parola-palindroma">Verifica se è una parola palindroma</button>
+            </section>
+            <!-- FINE SEZIONE PALINDROME -->
 
+             <!-- SEZIONE PARI E DISPARI -->
+             <section>
+                <h3>Gioco pari e dispari</h3>
+                <!-- Scelta numero -->
+                <h4>Dimmi un numero che va da 1 a 5 che verrà sommato a un altro numero random da 1 a 5</h4>
+                <label for="numero-utente"></label>
+                <select name="numero-utente" id="numero-utente" placeholder="scrivi qui il numero">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <!-- Scelta tipo -->
+                <h4>Dimmi se pensi che la somma di questi due numeri sia pari o dispari</h4>
+                <label for="scelta-utente"></label>
+                <select name="scelta-utente" id="scelta-utente" placeholder="scrivi qui la scelta">
+                    <option value="pari">pari</option>
+                    <option value="dispari">dispari</option>
+                </select>
+                <p class="output-pari-dispari"></p>
+                <button class="bottone-pari-dispari">Verifica se hai vinto</button>
+             </section>
+             <!-- FINE SEZIONE PARI E DISPARI -->
+        </div>
+    </main>
     <!-- Script -->
     <script src="js/script.js"></script>
 </body>
